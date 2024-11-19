@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+     <textarea></textarea>
+     <button><span><i class="fa-solid fa-play"></i></span>Speak</button>
+    </div>
+    
+    
+</body>
+<script>
+    let speech=new SpeechSynthesisUtterance()
+    let a=document.querySelector('textarea')
+    let button=document.querySelector('button')
+    button.addEventListener('click',()=>{
+        speech.text=a.value
+        window.speechSynthesis.speak(speech)
+        a.value=" "
+    })
+
+
+    </script>
+
+</html>
